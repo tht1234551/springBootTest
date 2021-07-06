@@ -21,6 +21,8 @@ public class MemberRepositoryTests {
     @Autowired
     MemberRepository memberRepository;
 
+    static final int random = (int)(Math.random() * 10000) + 1;
+
     @Test
     public void getRepository(){
         isTrue(memberRepository != null, "메시지?");
@@ -30,11 +32,19 @@ public class MemberRepositoryTests {
     @Test
     @Commit
     public void insert(){
-        int random = (int)(Math.random() * 10000) + 1;
         Member member = new Member();
         member.setName("정형진" + random);
         member.setPassword(random + "");
         member.setUsername("asd123" + random);
         memberRepository.create(member);
+    }
+
+    @Test
+    public void select(){
+        Member readId = new Member();
+        readId.setUsername("asd123" + random);
+        Member member = memberRepository.read(readId);
+        isTrue(member != null, "유저 가져오기");
+        System.out.println(member);
     }
 }

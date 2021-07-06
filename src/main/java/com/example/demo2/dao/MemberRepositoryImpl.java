@@ -22,7 +22,7 @@ public class MemberRepositoryImpl implements MemberRepository{
 
     @Override
     public Member read(Member member) {
-        return null;
+        return em.find(Member.class, member.getUsername());
     }
 
     @Override
