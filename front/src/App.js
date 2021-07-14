@@ -15,19 +15,19 @@ import Counter from "./Counter";
 const App = () => {
     return (
         <>
-            <MyComponent name={3}>칠드런</MyComponent>
+            <MyComponent name="1">칠드런</MyComponent>
             <Counter/>
         </>
     )
-};
+}
 
 MyComponent.defaultProps = {
     name : '기본이름'
-};
+}
 
 MyComponent.propTypes = {
     name : PropTypes.string,
-    number : PropTypes.number.isRequired
-};
+    // number : PropTypes.number.isRequired
+}
 
 export default App;
