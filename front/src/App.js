@@ -25,10 +25,9 @@ const App = () => {
             <ul>
                 <li><Link to="/Counter">Counter</Link></li>
             </ul>
-            {/*<MyComponent name="1">칠드런</MyComponent>*/}
-            {/*<Counter/>*/}
-            <Route path="/MyComponent" component={MyComponent}></Route>
-            <Route path="/Counter" component={Counter}></Route>
+
+            <Route path="/MyComponent" component={MyComponent}/>
+            <Route path="/Counter" component={Counter}/>
         </>
     )
 }
