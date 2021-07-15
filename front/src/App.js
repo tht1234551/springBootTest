@@ -2,6 +2,7 @@ import './App.css';
 import MyComponent from "./MyComponent";
 import PropTypes from "prop-types";
 import Counter from "./Counter";
+import {Route, Link} from 'react-router-dom';
 
 // function App() {
 //     const name = "리액트";
@@ -15,8 +16,19 @@ import Counter from "./Counter";
 const App = () => {
     return (
         <>
-            <MyComponent name="1">칠드런</MyComponent>
-            <Counter/>
+            <ul>
+                <li><Link to="/">홈</Link></li>
+            </ul>
+            <ul>
+                <li><Link to="/MyComponent">MyComponent</Link></li>
+            </ul>
+            <ul>
+                <li><Link to="/Counter">Counter</Link></li>
+            </ul>
+            {/*<MyComponent name="1">칠드런</MyComponent>*/}
+            {/*<Counter/>*/}
+            <Route path="/MyComponent" component={MyComponent}></Route>
+            <Route path="/Counter" component={Counter}></Route>
         </>
     )
 }
